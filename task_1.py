@@ -73,7 +73,7 @@ class Matrix:
                         new_matrix[i, j] += self[i, k] * other[k, j]
             return new_matrix
         else:
-            raise ValueError("The matrixs cannot be multiplied")
+            raise ValueError("The matrices cannot be multiplied")
 
 
 def LUP(U: Matrix, L: Matrix, P: Matrix) -> None:
@@ -82,12 +82,12 @@ def LUP(U: Matrix, L: Matrix, P: Matrix) -> None:
         # Find index of the pivot (maximum absolute element) in column i
         max_element_index = max(range(i, U.rows), key=lambda row: abs(U[row, i]))
 
-        # Swap rows in matrixs U, P and L if pivot is not on the diagonal
+        # Swap rows in matrices U, P and L if pivot is not on the diagonal
         if max_element_index != i:
             U.swap_rows(i, max_element_index)
             P.swap_rows(i, max_element_index)
 
-            # In matrix L swap only parts of rows that playsed below diagonal
+            # In matrix L swap only parts of rows that located below diagonal
             for col in range(i):
                 L[i, col], L[max_element_index, col] = (
                     L[max_element_index, col],
