@@ -93,10 +93,12 @@ def without_heuristic(
 
 if __name__ == "__main__":
     results = backtracking(graph, degree_heuristic, 3)
+    print("Results with degree heuristic:")
     print(results[0])
     print(f"States visited: {results[1]}")
     print(f"Backtracks: {results[2]}")
     results = backtracking(graph, without_heuristic, 3)
+    print("Results with without heuristic:")
     print(results[0])
     print(f"States visited: {results[1]}")
     print(f"Backtracks: {results[2]}")
